@@ -20,6 +20,23 @@ export class AppController {
   @Post('/client-access-token')
   async setClientAuthorizationToken(@Body() args): Promise<boolean> {
     const { token } = args;
-    return await this.spotiService.setClientAuthorizationToken(token);
+    return await this.spotiService.updateClientAuthorizationToken(token);
+  }
+
+  @Post('/veto')
+  async vetoSong(@Body() args) {
+    const { user } = args;
+    return await this.spotiService.vetoSong(user);
+  }
+
+  @Get('/app-data')
+  async getAppData() {
+    return await this.spotiService.getAppData();
+  }
+
+  @Post('add-user')
+  addUser(@Body() args) {
+    const { user } = args;
+    return this.spotiService.addUser(user);
   }
 }

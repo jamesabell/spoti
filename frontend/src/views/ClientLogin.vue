@@ -3,11 +3,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
 import ClientLoginForm from "../components/ClientLoginForm.vue";
 import { mapGetters } from "vuex";
 
-@Component({
+export default {
   components: {
     ClientLoginForm
   },
@@ -21,6 +20,5 @@ import { mapGetters } from "vuex";
       clientIsSignedIn: "client/isSignedIn"
     })
   }
-})
-export default class ClientLogin extends Vue {}
+};
 </script>

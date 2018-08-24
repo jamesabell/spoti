@@ -38,16 +38,21 @@ export class SpotiService {
         form: {
           grant_type: grantType,
           code,
-          redirect_uri: 'http://localhost:8081/client-callback',
-          client_id: 'e9d5017163e647b7bde7fcd6f1ee9da4',
-          client_secret: '93040c16301d4c19b23b88bb7f63151c',
+          refresh_token: this.clientRefreshToken,
+          redirect_uri: 'http://192.168.3.23:8081/client-callback',
+          client_id: '623403e8e02f4c459d4dbf0dd52f465c',
+          client_secret: 'a7fc1dbe0f6242aebee39c70254ad21c',
         },
       });
+
       const json = JSON.parse(accessTokenResponse);
       this.clientAuthorizationToken = json.access_token;
-      this.clientRefreshToken = json.refresh_token;
+      if (json.refresh_token) {
+        this.clientRefreshToken = json.refresh_token;
+      }
       return true;
     } catch (err) {
+      console.log('updateClientAuthorizationToken Error', err.message);
       return err;
     }
   }
@@ -88,9 +93,11 @@ export class SpotiService {
    * @todo Move to song service
    */
   public async vetoSong(user): Promise<IAppData> {
+    user = JSON.parse(user);
+    console.log(this.dannyDevitos.userIds);
     this.dannyDevitos.userIds.add(user.sub);
     if (this.songShouldBeChanged()) {
-      this.changeSong();
+      await this.changeSong();
     }
     return await this.getAppData();
   }
@@ -173,6 +180,7 @@ export class SpotiService {
    * @todo move to user service
    */
   public addUser(user: any) {
+    user = JSON.parse(user);
     if (!this.userIds.has(user.sub)) {
       this.userIds.add(user.sub);
       this.users.push(user);

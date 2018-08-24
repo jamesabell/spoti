@@ -3,7 +3,7 @@
       <p>After entering your client id and authorizing access, copy the code out of the URL and paste it in to the authorization token input.</p>
       <p>This will be automated when this can be put on a secure domain).</p>
         
-      <div>We need your Spotify Client ID:  <input v-model="clientId"> <a :href="`https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${authScopes}&redirect_uri=http%3A%2F%2Flocalhost:8081%2Fclient-callback`">Authorize</a></div>
+      <div>We need your Spotify Client ID:  <input v-model="clientId"> <a :href="`https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${authScopes}&redirect_uri=http%3A%2F%2F192.168.3.23:8081%2Fclient-callback`">Authorize</a></div>
       
       <h4>Where's my Client ID?</h4>
       <p>

@@ -1,0 +1,12 @@
+// style framework
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'variables';
+@import 'global';
+@import 'grid-helpers';
+
+// App elements
+body,
+html {
+    -webkit-font-smoothing: antialiased;
+}

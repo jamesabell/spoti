@@ -54,9 +54,10 @@ body {
     a {
         &.call-to-action {
             align-items: center;
+            animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
             background: $white;
             border-radius: 4px;
-            box-shadow: 2px 2px 6px $black;
+            box-shadow: 0 0 6px rgba($black, .5);
             color: $black;
             display: flex;
             font-family: $base-font-family;
@@ -67,9 +68,23 @@ body {
             padding: .75em 2em;
             text-decoration: none;
 
+            @keyframes pulse {
+                to {
+                    box-shadow: 0 0 0 40px rgba($black, 0);
+                }
+            }
+
             img {
                 margin: 0 .5em;
                 width: 150px;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                animation: none;
+                box-shadow: 2px 2px 12px $black;
+                outline: none;
             }
         }
     }

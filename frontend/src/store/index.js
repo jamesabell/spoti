@@ -29,7 +29,7 @@ const actions = {
         root: true
       });
     } else {
-      // @todo Should be mocking theses in api
+      // @todo Should be mocking thesis in api
       commit("song/set_playerInfo", sampleData.playerInfo, {
         root: true
       });

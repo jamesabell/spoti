@@ -5,7 +5,7 @@ import Vue from "vue";
 let webAuth = new auth0.WebAuth({
   domain: "spoti.auth0.com",
   clientID: "b6vRW-fuBH9M8Kx1LEgaY6cT_IGTag8x",
-  redirectUri: "http://192.168.3.23:8081/callback",
+  redirectUri: "http://localhost:8080/callback",
   audience: "https://spoti.auth0.com/userinfo",
   responseType: "token id_token",
   scope: "openid profile app_metadata"

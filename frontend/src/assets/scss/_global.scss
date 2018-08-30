@@ -1,0 +1,91 @@
+body {
+    animation: Gradient 15s ease infinite;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.home {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    .dat-header {
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    .base {
+        font-family: $base-font-family;
+    }
+
+    .pop {
+        color: $white;
+        display: block;
+        font-family: $script-font-family;
+        font-size: 3em;
+        text-shadow: 3px 3px $black;
+    }
+
+    a {
+        &.call-to-action {
+            align-items: center;
+            animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+            background: $white;
+            border-radius: 4px;
+            box-shadow: 0 0 6px rgba($black, .5);
+            color: $black;
+            display: flex;
+            font-family: $base-font-family;
+            font-size: 1.5em;
+            justify-content: center;
+            margin: 3em auto 0;
+            max-width: 65%;
+            padding: .75em 2em;
+            text-decoration: none;
+
+            @keyframes pulse {
+                to {
+                    box-shadow: 0 0 0 40px rgba($black, 0);
+                }
+            }
+
+            img {
+                margin: 0 .5em;
+                width: 150px;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                animation: none;
+                box-shadow: 2px 2px 12px $black;
+                outline: none;
+            }
+        }
+    }
+}

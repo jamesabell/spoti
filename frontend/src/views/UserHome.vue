@@ -25,7 +25,7 @@ export default {
   watch: {
     clientIsSignedIn() {
       if (this.clientIsSignedIn === false) {
-        this.$router.push({ name: "home" });
+        // this.$router.push({ name: "home" });
       }
     }
   },

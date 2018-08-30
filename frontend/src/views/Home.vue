@@ -1,18 +1,15 @@
 <template>
   <div class="home">
       <div v-show="clientIsSignedIn">
-        <h3>Someone's got a party going!</h3>
-        <button ></button>
-        <router-link :to="{ name: 'user-home' }" @click="$router.push({ name: 'user-home'})">Join the Party</router-link>
-        
-        <!-- Allow people to take over being the client? -->
+        <h3 class="dat-header"><span class="base">Someone's got a</span><span class="pop">party</span><span class="base">going!</span></h3>
+        <router-link :to="{ name: 'user-home' }" @click="$router.push({ name: 'user-home'})" class="call-to-action">Join <img src="../assets/logo.png" alt="spoti"></router-link>
       </div>
 
       <div v-show="!clientIsSignedIn">
         <div>
-          <h3>It doesn't look like anyone has anything going on</h3>
-          <h4>Start your own Spoti Stream, invite your friends, have a party.</h4>
-          <router-link :to="{ name: 'client-login' }" tag="button">Start Something</router-link>
+          <h3 class="dat-header base">It doesn't look like anyone is having any fun.</h3>
+          <h4 class="dat-header base">Invite your friends, have a<span class="pop">party!</span></h4>
+          <router-link :to="{ name: 'client-login' }" class="call-to-action">Start a<img src="../assets/logo.png" alt="spoti">stream!</router-link>
         </div>
       </div>
   </div>

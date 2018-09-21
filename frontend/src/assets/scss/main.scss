@@ -10,3 +10,9 @@ body,
 html {
     -webkit-font-smoothing: antialiased;
 }
+
+#app {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}

@@ -54,7 +54,14 @@ body {
     a {
         &.call-to-action {
             align-items: center;
+            // animation-name: pulse, pulse, pulse;
+            // animation-duration: 300ms, 300ms, 1.25s;
+            // animation-delay: 0ms, 300ms; /* add this */
+            // animation-timing-function: ease, ease, ease;
+            // animation-iteration-count: 1, 1, 1;
+            
             animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+            // animation-delay: 200ms, 200ms, 1.25s;
             background: $white;
             border-radius: 4px;
             box-shadow: 0 0 6px rgba($black, .5);
@@ -73,6 +80,20 @@ body {
                     box-shadow: 0 0 0 40px rgba($black, 0);
                 }
             }
+
+            // @keyframes pulse {
+            //     0% {
+            //         box-shadow: 0 0 0 40px rgba($black, 0);
+            //     }
+
+            //     50% {
+            //         box-shadow: 0 0 6px rgba($black, .5);
+            //     }
+            
+            //     100% {
+            //         box-shadow: 0 0 0 40px rgba($black, 0);
+            //     }
+            // }
 
             img {
                 margin: 0 .5em;

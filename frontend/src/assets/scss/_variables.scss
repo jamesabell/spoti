@@ -23,6 +23,12 @@ $base-z-index: 0;
 $green: #72bf94;
 $dark-green: darken($green,20%);
 $pale-blue: #72bebf;
+$bg-pink: #C074B2;
+$bg-blue: #8AB5E8;
+$bg-blue2: #23A6D5;
+$bg-orange: #EE7752;
+$bg-red: #E73C7E;
+$bg-green: #23D5AB;
 $red: #D00036;
 $blue: #72a7bf;
 $dark-gray: #333;
@@ -34,10 +40,10 @@ $silver: silver;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: darken($blue,5%);
+$action-color: darken($blue, 5%);
 
 // Box Shadow
-$shadow: 6px 0px 8px -8px;
+$shadow: 6px 0 8px -8px;
 
 // Border
 $base-border-color: $light-gray;

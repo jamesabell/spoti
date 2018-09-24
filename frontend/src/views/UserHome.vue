@@ -1,20 +1,23 @@
 <template>
     <div>
-      <div v-if="playerInfo.item !== undefined">
-        <div class='song-name'>
-          <h4> Song </h4>
-          {{ playerInfo.item.name }}
+        <div v-if="playerInfo.item !== undefined" class="player-container">
+            <div class="gradient gradient-feature"></div>
+            <div class="gradient gradient-base"></div>
+            <div class="player-content">
+                <div class="album-cover">
+
+                </div>
+                <div class="song">
+                    <h1>{{ playerInfo.item.name }}</h1>
+                    <ul>
+                        <li v-for="artist in playerInfo.item.artists" :key='artist.id' >{{ artist.name}}</li>
+                    </ul>
+                </div>
+                <button @click='veto()'>Vote to Skip <span class="count">({{ vetoCount }}/{{ userCount }})</span></button>
+            </div>
         </div>
-        <div class='artists'>
-          <h4>Artists</h4>
-          <ul>
-            <li v-for="artist in playerInfo.item.artists" :key='artist.id' >
-              {{ artist.name}}
-            </li>
-          </ul>
-        </div>
-        <button @click='veto()'>VETO ({{ vetoCount }}/{{ userCount }})</button>
-      </div>
+        <p>Brought to you by</p>
+        <img src="../assets/logo-white.png" alt="spoti" class="footer-logo">
     </div>
 </template>
 

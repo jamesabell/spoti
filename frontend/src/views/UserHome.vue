@@ -5,7 +5,7 @@
             <div class="gradient gradient-base"></div>
             <div class="player-content">
                 <div class="album-cover">
-
+                  <img v-bind:src="albumCover" alt="">
                 </div>
                 <div class="song">
                     <h1>{{ playerInfo.item.name }}</h1>
@@ -46,7 +46,8 @@ export default {
       playerInfo: "song/playerInfo",
       clientIsSignedIn: "client/isSignedIn",
       vetoCount: "song/vetos",
-      userCount: "user/count"
+      userCount: "user/count",
+      albumCover: "song/albumUrl"
     })
   }
 };

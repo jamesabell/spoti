@@ -7,7 +7,8 @@ const state = {
 
 const getters = {
   playerInfo: ({ playerInfo }) => playerInfo,
-  vetos: ({ vetos }) => vetos
+  vetos: ({ vetos }) => vetos,
+  albumUrl: ({ playerInfo }) => playerInfo.item.album.images[0].url
 };
 
 const actions = {

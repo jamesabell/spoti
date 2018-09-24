@@ -105,6 +105,10 @@ body {
     height: 400px;
     margin: 3em auto;
     width: 400px;
+
+    img {
+        max-width: 100%;
+    }
 }
 
 .player-content {

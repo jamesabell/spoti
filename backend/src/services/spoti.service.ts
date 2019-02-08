@@ -39,9 +39,9 @@ export class SpotiService {
           grant_type: grantType,
           code,
           refresh_token: this.clientRefreshToken,
-          redirect_uri: 'http://192.168.3.23:8081/client-callback',
-          client_id: '623403e8e02f4c459d4dbf0dd52f465c',
-          client_secret: 'a7fc1dbe0f6242aebee39c70254ad21c',
+          redirect_uri: `${process.env.client_url}/client-callback`,
+          client_id: process.env.client_id,
+          client_secret: process.env.client_secret,
         },
       });
 
@@ -50,6 +50,7 @@ export class SpotiService {
       if (json.refresh_token) {
         this.clientRefreshToken = json.refresh_token;
       }
+
       return true;
     } catch (err) {
       console.log('updateClientAuthorizationToken Error', err.message);
@@ -94,7 +95,6 @@ export class SpotiService {
    */
   public async vetoSong(user): Promise<IAppData> {
     user = JSON.parse(user);
-    console.log(this.dannyDevitos.userIds);
     this.dannyDevitos.userIds.add(user.sub);
     if (this.songShouldBeChanged()) {
       await this.changeSong();
@@ -134,6 +134,7 @@ export class SpotiService {
         ) {
           this.clearVetos();
         }
+
         this.playerInfo = response.data;
         return true;
       }

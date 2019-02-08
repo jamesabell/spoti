@@ -7,7 +7,7 @@
   "scripts": {
     "format": "prettier --write \"**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "nodemon",
+    "start:dev": "nodemon --exec 'ts-node -r dotenv/config -r tsconfig-paths/register'  src/main.ts",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/main.js",
     "start:hmr": "node dist/server",
@@ -38,6 +38,7 @@
     "@types/jest": "^21.1.8",
     "@types/node": "^9.3.0",
     "@types/supertest": "^2.0.4",
+    "dotenv": "^6.2.0",
     "jest": "^21.2.1",
     "nodemon": "^1.14.1",
     "prettier": "^1.11.1",

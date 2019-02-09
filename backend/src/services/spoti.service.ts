@@ -9,7 +9,7 @@ export class SpotiService {
   private clientAuthorizationTokens = ['']; // Something to think about
   private clientAuthorizationToken = this.clientAuthorizationTokens[0]; // But not right now
   private clientRefreshToken = '';
-  private dannyDevitos = {
+  private dannyDevitos: { userIds } = {
     userIds: new Set(),
   };
   private users: {}[] = [];
@@ -62,7 +62,7 @@ export class SpotiService {
    * Determines if the app data is out of sync
    */
   private isOutOfSync(): boolean {
-    return moment().diff(this.lastUpdate, 'seconds') > 10;
+    return moment().diff(this.lastUpdate, 'seconds') > 1;
   }
 
   /**
@@ -82,8 +82,9 @@ export class SpotiService {
     await this.refreshAppData();
     return {
       clientIsSignedIn: this.clientAuthorizationToken !== '',
-      vetoCount: this.dannyDevitos.userIds.size,
+      vetoUserIds: Array.from(this.dannyDevitos.userIds),
       userCount: this.userIds.size,
+      users: this.users,
       playerInfo: this.playerInfo,
     };
   }
@@ -130,6 +131,7 @@ export class SpotiService {
 
         if (
           this.playerInfo &&
+          this.playerInfo.item &&
           this.playerInfo.item.id !== response.data.item.id
         ) {
           this.clearVetos();

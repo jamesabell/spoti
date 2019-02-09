@@ -43,7 +43,7 @@ export default {
       return this.$router.app.auth;
     },
     ...mapGetters({
-      //   clientIsSignedIn: "client/isSignedIn"
+      clientIsSignedIn: "client/isSignedIn"
     })
   }
 };

@@ -17,13 +17,16 @@ const actions = {
     commit("song/set_playerInfo", appData.playerInfo, {
       root: true
     });
-    commit("song/set_vetos", appData.vetoCount, {
+    commit("song/set_vetoUserIds", appData.vetoUserIds, {
       root: true
     });
     commit("user/set_count", appData.userCount, {
       root: true
     });
     commit("client/set_isSignedIn", appData.clientIsSignedIn, {
+      root: true
+    });
+    commit("user/set_list", appData.users, {
       root: true
     });
   },

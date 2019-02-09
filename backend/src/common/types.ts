@@ -1,7 +1,8 @@
 export interface IAppData {
   clientIsSignedIn: boolean;
-  vetoCount: number;
+  vetoUserIds: string[];
   userCount: number;
+  users: {};
   playerInfo: IPlayerInfo;
 }
 

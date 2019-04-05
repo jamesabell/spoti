@@ -39,6 +39,10 @@ body {
         font-size: 1.25em;
     }
 
+    p {
+        color: $white;
+    }
+
     .base {
         font-family: $base-font-family;
     }
@@ -87,6 +91,19 @@ body {
                 outline: none;
             }
         }
+    }
+}
+
+.wait {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .content {
+        background: $white;
+        color: $dark-gray;
+        padding: 1em;
     }
 }
 
@@ -191,7 +208,6 @@ button {
 }
 
 p {
-    color: $white;
     display: block;
     font-family: $base-font-family;
     font-size: .8em;

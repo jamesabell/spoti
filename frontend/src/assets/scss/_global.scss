@@ -2,6 +2,7 @@ body {
     animation: Gradient 12s ease infinite;
     background: linear-gradient(-45deg, $bg-orange, $bg-red, $bg-blue2, $bg-green);
     background-size: 400% 400%;
+    font-family: $base-font-family;
     height: 100vh;
     margin: 0;
     width: 100vw;
@@ -102,9 +103,40 @@ body {
 
     .content {
         background: $white;
+        border-radius: $base-border-radius;
+        box-shadow: 0 4px 50px rgba($black, .75);
         color: $dark-gray;
-        padding: 1em;
+        max-width: 500px;
+        padding: 2em;
+        text-align: center;
     }
+
+    .authorize {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 2em;
+
+        .section {
+            padding: 1em;
+        }
+    }
+
+    a {
+        color: darken($bg-pink, 20%);
+    }
+}
+
+input {
+    outline: 0;
+    background: $off-white;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 .player-container {
@@ -172,7 +204,7 @@ body {
     }
 }
 
-button {
+button, .button {
     align-items: center;
     background: $white;
     border-radius: 4px;
@@ -211,6 +243,7 @@ p {
     display: block;
     font-family: $base-font-family;
     font-size: .8em;
+    line-height: 2em;
     margin: 0 auto 1em;
     text-align: center;
 }

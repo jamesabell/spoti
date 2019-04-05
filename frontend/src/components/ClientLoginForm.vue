@@ -1,33 +1,31 @@
 <template>
   <div class="wait">
     <div class="content">
-      <div v-if="true">TRUE?</div>
-      <p>
-        After entering your client id and authorizing access, copy the code out of the URL and paste it in to the
-        authorization token input.
-      </p>
-      <p>This will be automated when this can be put on a secure domain).</p>
+      <h1>Hang on...</h1>
+      <p>After entering and authorizing access of your <b>Client ID</b>, copy the code out of the URL and paste it in to the authorization token input.</p>
+      <small>(This will be automated when this can be put on a secure domain)</small>
 
-      <div>
-        We need your Spotify Client ID:
-        <input v-model="clientId">
-        <a
-          :href="`https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${authScopes}&redirect_uri=http%3A%2F%2Flocalhost:8080%2Fclient-callback`"
-        >Authorize</a>
-      </div>
-      <div>
-        Secret:
-        <input v-model="secret">
+      <div class="authorize">
+        <div class="section client">
+          <h2>Client ID</h2>
+          <input v-model="clientId">
+          <a class="shadow"
+            :href="`https://accounts.spotify.com/authorize?response_type=code&client_id=${clientId}&scope=${authScopes}&redirect_uri=http%3A%2F%2Flocalhost:8080%2Fclient-callback`"
+          >Authorize</a>
+        </div>
+        <div class="section secret">
+          <h2>Secret</h2>
+          <input v-model="secret">
+        </div>
       </div>
 
-      <h4>Where's my Client ID?</h4>
-      <p>
-        You will need to log in and create a spotify app to get a client id. Follow this link and create one:
+      <h3>Help! Where's my <b>Client ID</b>?</h3>
+      <p>You'll need to sign in to Spotify and create an app to get a <b>Client ID</b>.<br/>
+      Follow this link and create one:<br/>
         <a
-          target
+          target="_blank" rel="noopener noreferrer"
           href="https://developer.spotify.com/dashboard/applications"
-        >Register an App</a>
-      </p>
+        >Get my Client ID</a></p>
     </div>
   </div>
 </template>

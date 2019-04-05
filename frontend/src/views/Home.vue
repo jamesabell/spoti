@@ -24,8 +24,7 @@
           <span class="pop">party!</span>
         </h4>
         <router-link :to="{ name: 'client-login' }" class="call-to-action">
-          Start a
-          <img src="../assets/logo.png" alt="spoti">stream!
+          Start <img src="../assets/logo.png" alt="spoti">
         </router-link>
       </div>
     </div>

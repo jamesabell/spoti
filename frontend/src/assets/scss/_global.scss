@@ -147,6 +147,12 @@ input {
     margin: 5vh auto 2vh;
     position: relative;
     width: 500px;
+
+    @media screen and (max-width: 500px) {
+        width: 90vw;
+        margin-top: 1.5em;
+        height: 550px;
+    } 
 }
 
 .album-cover {
@@ -154,6 +160,12 @@ input {
     height: 400px;
     margin: 3em auto;
     width: 400px;
+
+    @media screen and (max-width: 500px) {
+        height: 70vw;
+        margin-bottom: .5em;
+        width: 70vw;
+    }
 
     img {
         max-width: 100%;
@@ -173,9 +185,10 @@ input {
 }
 
 .song {
+    text-align: center;
+
     h1 {
         font-size: 1.25em;
-        text-align: center;
     }
 
     ul {
@@ -218,9 +231,19 @@ button, .button {
     max-width: 65%;
     padding: .75em 2em;
 
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        margin-top: .5em;
+    }
+
     .count {
         color: rgba($black, .5);
         margin-left: .5em;
+
+        @media screen and (max-width: 500px) {
+            font-size: .75em;
+            margin-left: 0;
+        }
     }
 }
 
